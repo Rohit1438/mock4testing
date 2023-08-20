@@ -2,9 +2,12 @@ const express=require("express")
 const mongoose=require("mongoose")
 const userRouter = require("./routes/userRouter")
 
-const app=express()
+const cors = require("cors"); // Import the cors package
+
+const app = express();
 
 app.use(express.json());
+app.use(cors()); // Use cors middleware to enable CORS
 
 const connection=async()=>{
 try{
